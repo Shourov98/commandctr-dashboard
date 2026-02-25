@@ -25,6 +25,13 @@ export default function LoginPage() {
           Forgot password?
         </Link>
       </p>
+
+      <p className="auth-hint">
+        New here?{" "}
+        <Link className="auth-link" href="/auth/signup">
+          Create an account
+        </Link>
+      </p>
     </AuthFormShell>
   );
 }
