@@ -10,15 +10,9 @@ const spaceGrotesk = Space_Grotesk({
 const quickLinks = [
   {
     href: "/auth/login",
-    title: "Log In",
-    description: "Access your account and continue where you left off.",
+    title: "Admin Login",
+    description: "Access the seeded admin dashboard with your administrator credentials.",
     action: "Go to Login",
-  },
-  {
-    href: "/auth/signup",
-    title: "Sign Up",
-    description: "Create a new account for your team in a few steps.",
-    action: "Create Account",
   },
   {
     href: "/dashboard",
@@ -40,14 +34,14 @@ export default function HomePage() {
             CommandCtr
           </p>
           <h1 className="max-w-2xl text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.1]">
-            One place to enter your authentication and dashboard flows.
+            CommandCtr admin access and dashboard navigation.
           </h1>
           <p className="max-w-3xl text-base text-[#445072] sm:text-lg">
-            Use quick navigation below to move between Login, Sign Up, and Dashboard pages.
+            Use the seeded admin login to enter the dashboard and manage platform activity.
           </p>
         </header>
 
-        <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+        <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
           {quickLinks.map((item) => (
             <article
               key={item.href}
@@ -66,8 +60,8 @@ export default function HomePage() {
         </section>
 
         <div className="rounded-[0.8rem] border border-[#c8d2e8] bg-[#152a59] p-5 text-[#e5ecff] sm:p-6">
-          <p className="text-base font-medium sm:text-lg">Suggested flow for first-time users</p>
-          <p className="mt-2 text-sm text-[#bfd0ff] sm:text-base">Sign Up -&gt; Log In -&gt; Dashboard</p>
+          <p className="text-base font-medium sm:text-lg">Seeded admin login</p>
+          <p className="mt-2 text-sm text-[#bfd0ff] sm:text-base">Use `admin@commandctr.com` and `admin@123` to enter the admin dashboard.</p>
         </div>
       </div>
     </main>

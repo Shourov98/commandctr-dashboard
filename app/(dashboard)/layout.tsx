@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AuthGuard from "@/components/auth/AuthGuard";
 import { Poppins } from "next/font/google";
 import DashboardShell from "./_components/DashboardShell";
 
@@ -17,8 +18,10 @@ export default function DashboardLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <section className={`${poppins.variable} min-h-screen bg-[#eef1f6] text-[#1e2433]`} style={{ fontFamily: "var(--font-dashboard)" }}>
-      <DashboardShell>{children}</DashboardShell>
-    </section>
+    <AuthGuard>
+      <section className={`${poppins.variable} min-h-screen bg-[#eef1f6] text-[#1e2433]`} style={{ fontFamily: "var(--font-dashboard)" }}>
+        <DashboardShell>{children}</DashboardShell>
+      </section>
+    </AuthGuard>
   );
 }
