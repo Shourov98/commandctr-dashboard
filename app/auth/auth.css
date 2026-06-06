@@ -43,6 +43,12 @@
   gap: 0.8rem;
 }
 
+.auth-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .auth-label {
   font-size: 1.06rem;
   line-height: 1.3;
@@ -100,10 +106,29 @@
   transform: translateY(1px);
 }
 
+.auth-button:disabled {
+  cursor: wait;
+  opacity: 0.82;
+}
+
 .auth-hint {
   margin-top: 0.9rem;
   font-size: 0.95rem;
   color: rgba(238, 245, 255, 0.85);
+}
+
+.auth-hint-spacious {
+  margin-top: 0;
+}
+
+.auth-error {
+  margin-top: 0.35rem;
+  border-radius: 0.35rem;
+  background: rgba(255, 93, 98, 0.14);
+  color: #ffd6d7;
+  font-size: 0.94rem;
+  line-height: 1.4;
+  padding: 0.75rem 0.9rem;
 }
 
 .auth-link {

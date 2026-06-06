@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, type ReactNode } from "react";
+
+import { useAuth } from "@/components/auth/AuthProvider";
 
 type NavItem = {
   label: string;
@@ -34,8 +36,11 @@ function isActive(pathname: string, href: string) {
 
 export default function DashboardShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
+  const { logout, user } = useAuth();
   const [collapsed, setCollapsed] = useState(false);
   const [cmsOpen, setCmsOpen] = useState(pathname.startsWith("/cms"));
+  const displayName = [user?.firstName, user?.lastName].filter(Boolean).join(" ") || "Admin";
 
   return (
     <div
@@ -104,14 +109,18 @@ export default function DashboardShell({ children }: { children: ReactNode }) {
           })}
         </nav>
 
-        <Link
+        <button
+          type="button"
+          onClick={() => {
+            logout();
+            router.replace("/auth/login");
+          }}
           className={`mt-auto inline-flex items-center gap-2 rounded-[0.55rem] px-[0.7rem] py-[0.72rem] text-[1.06rem] font-semibold text-[#ff5d62] hover:bg-[#ff5d62]/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5d62] ${collapsed ? "w-full justify-center" : "w-fit max-md:mt-3"}`}
-          href="/auth/login"
           title={collapsed ? "Logout" : undefined}
         >
           <span aria-hidden="true">↩</span>
           {collapsed ? null : <span>Logout</span>}
-        </Link>
+        </button>
       </aside>
 
       <main className="flex flex-col gap-4">
@@ -126,8 +135,8 @@ export default function DashboardShell({ children }: { children: ReactNode }) {
               ☰
             </button>
             <div>
-              <h2 className="m-0 text-[1.45rem] leading-tight max-[700px]:text-[1.2rem]">Welcome,James</h2>
-              <p className="m-0 text-[0.9rem] opacity-85 max-[700px]:text-[0.8rem]">Have a nice day!</p>
+              <h2 className="m-0 text-[1.45rem] leading-tight max-[700px]:text-[1.2rem]">Welcome, {displayName}</h2>
+              <p className="m-0 text-[0.9rem] opacity-85 max-[700px]:text-[0.8rem]">{user?.email ?? "Admin session active"}</p>
             </div>
           </div>
 
