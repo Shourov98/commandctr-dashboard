@@ -9,8 +9,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Authentication | CommandCtr",
-  description: "Authentication pages for CommandCtr",
+  title: "Authentication | Twinstr",
+  description: "Authentication pages for Twinstr",
 };
 
 export default function AuthLayout({
@@ -19,7 +19,7 @@ export default function AuthLayout({
   return (
     <section className={`auth-page ${poppins.variable}`} style={{ fontFamily: "var(--font-auth)" }}>
       <div className="auth-card">
-        <h1 className="auth-logo">CommandCtr</h1>
+        <h1 className="auth-logo">Twinstr</h1>
         {children}
       </div>
     </section>

@@ -51,7 +51,7 @@ export default function DashboardShell({ children }: { children: ReactNode }) {
           <h1
             className={`overflow-hidden text-ellipsis whitespace-nowrap font-bold tracking-[0.01em] text-[#44e9e1] ${collapsed ? "text-base" : "text-[1.65rem]"}`}
           >
-            {collapsed ? "CC" : "CommandCtr"}
+            {collapsed ? "TW" : "Twinstr"}
           </h1>
         </div>
 

@@ -10,8 +10,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Dashboard | CommandCtr",
-  description: "Dashboard pages for CommandCtr",
+  title: "Dashboard | Twinstr",
+  description: "Dashboard pages for Twinstr",
 };
 
 export default function DashboardLayout({

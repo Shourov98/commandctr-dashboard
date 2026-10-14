@@ -22,7 +22,7 @@ export default function CmsAboutUsPage() {
             <label className="block text-[0.88rem] font-semibold text-[#33415f]">
               Intro Paragraph
               <textarea
-                defaultValue="CommandCtr helps teams unify product, order, and inventory workflows across channels in one operational cockpit."
+                defaultValue="Twinstr helps teams unify product, order, and inventory workflows across channels in one operational cockpit."
                 rows={4}
                 className="mt-1.5 w-full rounded-[0.45rem] border border-[#d3dbe7] bg-[#f7f9fc] px-3 py-2.5 text-[0.95rem] text-[#4b5873] outline-none focus:ring-2 focus:ring-[#2ee9df]/40"
               />

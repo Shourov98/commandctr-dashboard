@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CommandCtr Admin Dashboard",
-  description: "Admin dashboard for CommandCtr",
+  title: "Twinstr Admin Dashboard",
+  description: "Admin dashboard for Twinstr",
 };
 
 export default function RootLayout({
