@@ -55,7 +55,9 @@ export class ApiClientError extends Error {
 const MOCK_AUTH = process.env.NEXT_PUBLIC_USE_REAL_API !== "1";
 
 const MOCK_SEEDED_ADMINS: Record<string, { password: string; firstName: string; lastName: string }> = {
+  "admin@twinstr.com": { password: "admin@123", firstName: "Admin", lastName: "User" },
   "admin@commandctr.com": { password: "admin@123", firstName: "Admin", lastName: "User" },
+  "superadmin@twinstr.com": { password: "super@123", firstName: "Super", lastName: "Admin" },
   "superadmin@commandctr.com": { password: "super@123", firstName: "Super", lastName: "Admin" },
 };
 
@@ -127,14 +129,14 @@ export const authApi = {
 };
 
 export const authStorage = {
-  key: "commandctr-admin-auth",
+  key: "twinstr-admin-auth",
 
   save(session: AuthSession) {
     window.localStorage.setItem(this.key, JSON.stringify(session));
   },
 
   load(): AuthSession | null {
-    const raw = window.localStorage.getItem(this.key);
+    const raw = window.localStorage.getItem(this.key) || window.localStorage.getItem("commandctr-admin-auth");
     if (!raw) {
       return null;
     }
@@ -143,11 +145,13 @@ export const authStorage = {
       return JSON.parse(raw) as AuthSession;
     } catch {
       window.localStorage.removeItem(this.key);
+      window.localStorage.removeItem("commandctr-admin-auth");
       return null;
     }
   },
 
   clear() {
     window.localStorage.removeItem(this.key);
+    window.localStorage.removeItem("commandctr-admin-auth");
   },
 };

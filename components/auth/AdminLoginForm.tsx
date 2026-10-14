@@ -10,7 +10,7 @@ import { useAuth } from "./AuthProvider";
 export default function AdminLoginForm() {
   const router = useRouter();
   const { login } = useAuth();
-  const [email, setEmail] = useState("admin@commandctr.com");
+  const [email, setEmail] = useState("admin@twinstr.com");
   const [password, setPassword] = useState("admin@123");
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,7 +48,7 @@ export default function AdminLoginForm() {
           name="email"
           type="email"
           className="auth-input"
-          placeholder="admin@commandctr.com"
+          placeholder="admin@twinstr.com"
           autoFocus
           required
           value={email}
@@ -100,7 +100,7 @@ export default function AdminLoginForm() {
 
       <div className="auth-info">
         <p className="auth-hint auth-hint-spacious">This dashboard accepts seeded admin accounts only.</p>
-        <p className="auth-hint">Default seeded login: `admin@commandctr.com` / `admin@123`</p>
+        <p className="auth-hint">Default seeded login: `admin@twinstr.com` / `admin@123`</p>
       </div>
     </>
   );

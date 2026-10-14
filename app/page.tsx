@@ -31,10 +31,10 @@ export default function HomePage() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 rounded-[1rem] border border-[#d4dced] bg-white p-6 shadow-[0_20px_50px_rgba(21,40,83,0.12)] sm:p-8 lg:p-12">
         <header className="space-y-4">
           <p className="inline-flex rounded-full bg-[#152a59] px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.12em] text-[#7ce9e2]">
-            CommandCtr
+            Twinstr
           </p>
           <h1 className="max-w-2xl text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.1]">
-            CommandCtr admin access and dashboard navigation.
+            Twinstr admin access and dashboard navigation.
           </h1>
           <p className="max-w-3xl text-base text-[#445072] sm:text-lg">
             Use the seeded admin login to enter the dashboard and manage platform activity.
@@ -61,7 +61,7 @@ export default function HomePage() {
 
         <div className="rounded-[0.8rem] border border-[#c8d2e8] bg-[#152a59] p-5 text-[#e5ecff] sm:p-6">
           <p className="text-base font-medium sm:text-lg">Seeded admin login</p>
-          <p className="mt-2 text-sm text-[#bfd0ff] sm:text-base">Use `admin@commandctr.com` and `admin@123` to enter the admin dashboard.</p>
+          <p className="mt-2 text-sm text-[#bfd0ff] sm:text-base">Use `admin@twinstr.com` and `admin@123` to enter the admin dashboard.</p>
         </div>
       </div>
     </main>

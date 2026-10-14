@@ -5,7 +5,7 @@ export default function SignupPage() {
     <AuthFormShell title="Admin accounts only">
       <div className="auth-info">
         <p className="auth-hint auth-hint-spacious">Admin signup is disabled in this dashboard.</p>
-        <p className="auth-hint">Use a seeded admin account like `admin@commandctr.com` to log in.</p>
+        <p className="auth-hint">Use a seeded admin account like `admin@twinstr.com` to log in.</p>
       </div>
     </AuthFormShell>
   );
